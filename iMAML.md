@@ -6,5 +6,6 @@
 # Strengths
 * It achieves slightly better results on the few-shot classification task than the MAML (full GD) with significantly lower memory footprint — iMAML has constant space complexity while MAML has linear. However, the time consumption is nearly same for the same number of inner gradient steps.
 * iMAML is agnostic to the inner optimization method used, as long as it can find an approximate solution to the inner-level optimization problem. This permits the use of higher-order methods, and in principle even non-differentiable optimization methods or components like sample- based optimization, line-search.
+* It can be extended to a broader class of inner loop procedures like dynamic programming (e.g, q-learning), energy-based models, actor-critic RL methods, etc.
 # Weakness
 * Implementing the conjugate gradient descent algorithm to compute jacobian-vector product can be cumbersome.
