@@ -9,3 +9,4 @@
 * It can be extended to a broader class of inner loop procedures like dynamic programming (e.g, q-learning), energy-based models, actor-critic RL methods, etc.
 # Weakness
 * Implementing the conjugate gradient descent algorithm to compute jacobian-vector product can be cumbersome.
+ 
