@@ -1,1 +1,15 @@
-
+# Summary
+* The authors recognize the prominent conceptualizations of the issues faced by neural networks in continual learning framework:
+  * <b>Catastrophic forgetting (interference)</b>: The primary concern here is the lack of stability in neural networks, and the main solution is to limit the extent of weight sharing accross experiences by focusing on preserving past knowledge.
+  * <b> Stability-Plasticity dilemma</b>: The primary concern is the balance between network stability (to preserve past knowledge) and plasticity (to rapidly learn the current experience). For example, these techniques focus on balancing limited weight sharing with some mechanism to ensure fast learning.
+* The focus of this paper is addressing the stability-plasiticity dilemma. To this end, the authors propose a novel perspective on the goal of gradient alignment for the continual learning problem. 
+* The key idea is that there is a clear connection between gradient angles and managing the extent of weight sharing. The key difference in perspective with past conceptualizations of continual learning is that we are not just concerned with current transfer and interference with respect to past examples, but also with the dynamics of transfer and interference moving forward as we learn.
+* This conceptualization has some similarity with meta-learning, whose perspective on continual learning is: we would like to learn to modify our learning to affect the dynamics of transfer and interference in a general sense. 
+* The proposed algorithm, Meta Experience Replay (MER), adopts a meta-learning perspective on continual learning, and uses experience replay to address the non-stationarity issue arising from accumulating the dataset in an online manner. Specifically, MER learns to learn each example in a way that generalizes to other examples from the overall distribution. It does so by allowing weight sharing across examples that enables transfer to improve future performance must not disrupt performance on what has come previously.
+# Strenghts
+* MER not reliant on any provided notion of tasks and in most of the settings in real world we must detect the concept of tasks without supervision.
+* MER displays the best adaption to incoming tasks among the baselines they considered --including the SOTA at that time, GEM--, while also providing very strong retention of knowledge when learning future tasks.
+* MER gives significant performance gains in terms of retention accuracy in small buffer settings compared to other baselines in the MNIST permutation and MNIST rotation benchmarks.
+* MER gives significantly better results in highly non-stationary settings with fewer examples per task. It is also computationally efficient compared to the baselines. In fact, MER greatly outperforms GEM with an order of magnitude smaller buffer. 
+* DQN-MER exhibits the kind of learning patterns expected from humans for these games, while a standard DQN struggles to generalize as the game changes and to retain knowledge over time.
+* MER lead to a shift in the distribution of gradient dot products. This difference alters the learning process making incoming examples on average result in slight transfer rather than significant interference.
