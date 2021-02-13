@@ -6,7 +6,7 @@
 * The key idea is that there is a clear connection between gradient angles and managing the extent of weight sharing. The key difference in perspective with past conceptualizations of continual learning is that we are not just concerned with current transfer and interference with respect to past examples, but also with the dynamics of transfer and interference moving forward as we learn.
 * This conceptualization has some similarity with meta-learning, whose perspective on continual learning is: we would like to learn to modify our learning to affect the dynamics of transfer and interference in a general sense. 
 * The proposed algorithm, Meta Experience Replay (MER), adopts a meta-learning perspective on continual learning, and uses experience replay to address the non-stationarity issue arising from accumulating the dataset in an online manner. Specifically, MER learns to learn each example in a way that generalizes to other examples from the overall distribution. It does so by allowing weight sharing across examples that enables transfer to improve future performance must not disrupt performance on what has come previously.
-# Strenghts
+# Strengths
 * MER not reliant on any provided notion of tasks and in most of the settings in real world we must detect the concept of tasks without supervision.
 * MER displays the best adaption to incoming tasks among the baselines they considered --including the SOTA at that time, GEM--, while also providing very strong retention of knowledge when learning future tasks.
 * MER gives significant performance gains in terms of retention accuracy in small buffer settings compared to other baselines in the MNIST permutation and MNIST rotation benchmarks.
